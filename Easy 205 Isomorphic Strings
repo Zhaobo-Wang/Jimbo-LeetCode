@@ -1,0 +1,50 @@
+###
+
+Given two strings s and t, determine if they are isomorphic.
+
+Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+
+All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.
+
+ 
+
+Example 1:
+
+Input: s = "egg", t = "add"
+Output: true
+Example 2:
+
+Input: s = "foo", t = "bar"
+Output: false
+Example 3:
+
+Input: s = "paper", t = "title"
+Output: true
+ 
+###
+
+#核心点 一个字母只能对应一个别的字母
+# egg -> add
+# e -> a  / g -> d 
+# foo -> bar
+# f - > b  / o -> a / o -> r
+# （o 不可以在这里对应两个不同的字母）
+
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        mapST = {}
+        mapTS = {} #用hash table去检查是否已经包含对应了字母
+        
+        for i in range(0, len(s)):
+            
+            char1 = s[i] #e
+            char2 = t[i] #a
+            
+            if ((char1 in mapST and mapST[char1] != char2) or (char2 in mapTS and mapTS[char2] != char1)):
+                return False
+            # 如果说 e 已经在 hash table中了，e也对应了别的字母 那么就是错的
+            mapST[char1] = char2 # 在hash table中 e对应 e -> a
+            mapTS[char2] = char1 # 在hash table中 a对应 a -> e
+            
+        return True
+        
