@@ -21,7 +21,7 @@ Output: 2
 #使用字典查找
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        count_nums = {}
+        count_nums = {} #n就是key，出现了几次就对应着value 
         for n in nums:
             if n not in count_nums.keys():
                 count_nums[n] = 1
