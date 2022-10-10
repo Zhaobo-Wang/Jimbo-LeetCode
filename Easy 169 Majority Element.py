@@ -28,4 +28,4 @@ class Solution:
             else:
                 count_nums[n] += 1
 
-        return max(count_nums, key=count_nums.get)
+        return max(count_nums, key=count_nums.get) #get最后的key通过比较它们的value数值
