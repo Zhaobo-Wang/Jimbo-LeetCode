@@ -1,3 +1,4 @@
+'''
 ###
 
 Given two strings s and t, determine if they are isomorphic.
@@ -20,7 +21,8 @@ Example 3:
 
 Input: s = "paper", t = "title"
 Output: true
- 
+'''
+
 ###
 
 #核心点 一个字母只能对应一个别的字母
