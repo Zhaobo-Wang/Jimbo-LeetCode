@@ -1,3 +1,4 @@
+'''
 ###
 
 You are given an array prices where prices[i] is the price of a given stock on the ith day.
@@ -21,6 +22,8 @@ Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0.
  
 ###
+
+'''
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
